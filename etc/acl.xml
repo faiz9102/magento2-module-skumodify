@@ -1,0 +1,9 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Faiz_SKUmod::modify_sub_menu" title="Faiz_SKUmod">
+                <resource id="Faiz_SKUmod::moddify_page" title="Modifying Page" sortOrder="10"/>
+            </resource>
+        </resources>
+    </acl>
+</config>

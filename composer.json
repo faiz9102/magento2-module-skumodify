@@ -1,0 +1,20 @@
+{
+  "name": "faiz/skumod",
+  "version": "1.0.0",
+  "description": "Module to modify SKU of all products from a single form",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Faiz\\SKUmod\\": ""
+    }
+  }
+}
