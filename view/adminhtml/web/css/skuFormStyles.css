@@ -1,0 +1,82 @@
+#productSkuTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#productSkuTable td:nth-of-type(2) {
+    text-align: left;
+    padding-inline: 6rem;
+}
+
+#productSkuTable tr:nth-of-type(2n) {
+    background-color: #efefef;
+}
+
+#productSkuTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#productSkuTable th {
+    background-color: #ccc;
+    padding: 1rem;
+}
+
+#productSkuTable input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#productOldSku {
+    max-width: 11vw;
+}
+
+#productNewSku {
+    max-width: 20vw;
+}
+
+.col-sku {
+    min-width: 10vw;
+}
+
+form {
+    button {
+        float: right;
+        margin: 1rem;
+    }
+}
+
+#fileInputBox {
+    display: inline-block;
+
+}
+
+#errorMessageContainer {
+    font-weight: 600;
+    color: #fc2323;
+}
+
+#ImportContainer {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+#fileInputBox{
+    margin : 1rem;
+}
+#loadFileContainer {
+    margin: 1rem ;
+    display: flex;
+    flex-direction: row;
+
+}
+#errorMessageContainer{
+    margin-left: 4rem;
+    align-self: center;
+}

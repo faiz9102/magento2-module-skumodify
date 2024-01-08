@@ -77,6 +77,9 @@ class Formsubmission extends Action implements HttpPostActionInterface
             $modifiedCount = 0;
             $skus = $this->getRequest()->getParam('sku', []);
             foreach ($skus as $productId => $newSku) {
+                if($newSku === ""){
+                    continue;
+                }
                 $product = $this->productRepository->getById($productId, true);
                 if ($product->getSku() !== $newSku) {
                     if (strlen($newSku) <= 2) {

@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Faiz_SKUmod::moddify_page" title="Modifying Page" module="Faiz_SKUmod" sortOrder="10" parent="Magento_Catalog::catalog_products" action="custom/modify/sku" resource="Faiz_SKUmod::modify_sub_menu"/>
+        <add id="Faiz_SKUmod::moddify_page" title="Modify SKUs (bulk)" module="Faiz_SKUmod" sortOrder="10"
+             parent="Magento_Catalog::catalog_products" action="custom/modify/sku"
+             resource="Faiz_SKUmod::modify_sub_menu"/>
     </menu>
 </config>

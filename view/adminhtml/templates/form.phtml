@@ -1,53 +1,14 @@
-<style>
-    #productSkuTable {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
-
-    #productSkuTable td:nth-last-of-type(2n){
-        text-align : left;
-        padding-inline : 6rem;
-    }
-
-    #productSkuTable tr:nth-of-type(2n){
-        background-color : #efefef;
-    }
-    #productSkuTable td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: center;
-    }
-
-    #productSkuTable th {
-        background-color: #ccc;
-        padding : 1rem;
-    }
-
-    #productSkuTable input {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 6px;
-        margin: 0;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    #submitBtn {
-        float : right;
-        margin-right : 2rem;
-    }
-</style>
-
 <?php $products = $this->getProducts(); ?>
 <form name="skuUpdateForm" method="POST" action="<?= $this->getUrl('custom/modify/formsubmission') ?>">
-    <input name="form_key" type="hidden" value="<?php $Key = $this->getFormKey(); echo $Key; ?>"/>
+    <input name="form_key" type="hidden" value="<?php $Key = $this->getFormKey();
+    echo $Key; ?>"/>
     <table class="data table" id="productSkuTable">
         <thead>
         <tr class="headings">
-            <th class="col-auto">Product ID</th>
-            <th class="col-name">Name of Product</th>
-            <th class="col-sku">SKU</th>
+            <th id="productId" class="col-auto">Product ID</th>
+            <th id="productName" class="col-name">Name of Product</th>
+            <th id="productOldSku" class="col-sku">SKU (old)</th>
+            <th id="productNewSku" class="col-sku">SKU (new)</th>
         </tr>
         </thead>
         <tbody>
@@ -55,17 +16,36 @@
             <tr class="data-row">
                 <td class="col-auto"><?php echo $product["entity_id"]; ?></td>
                 <td class="col-name"><?php echo $product['name']; ?></td>
-                <td class="col-sku">
-                    <input type="text" name="sku[<?php echo $product["entity_id"]; ?>]" value="<?php echo $product['sku']; ?>" class="input-text" />
+                <td class="col-sku old-sku"><?php echo $product['sku']; ?></td>
+                <td class="col-sku new-sku">
+                    <input type="text" name="sku[<?php echo $product["entity_id"]; ?>]"
+                           value="" class="input-text"/>
                 </td>
             </tr>
-            <?php } ?>
+        <?php } ?>
         </tbody>
     </table>
-    <?php if(isset($Key)){ ?>
-    <button id="submitBtn" type="submit" class="action-primary">
-        <span>Update SKUs</span>
-    </button>
+    <?php if (isset($Key)) { ?>
+        <button id="submitBtn" type="submit" class="action-primary">
+            <span>Update SKUs</span>
+        </button>
     <?php } ?>
+    <button id="exportCsvBtn" type="button" class="action-secondary">
+        <span>Export as CSV</span>
+    </button>
 </form>
-
+<div id="ImportContainer">
+    <div id="importFileContainer">
+        <label id="fileInputBox" class="action-secondary" for="fileInput">
+            <span>Import From CSV</span>
+        </label>
+        <input type="file" class="file-uploader-button" value="Import CSV" aria-label="File browser example"
+               id="fileInput"/>
+    </div>
+    <div id="loadFileContainer">
+        <button class="action-primary" id="loadFileBtn">
+            <span>Load</span>
+        </button>
+        <span id="errorMessageContainer"></span>
+    </div>
+</div>
