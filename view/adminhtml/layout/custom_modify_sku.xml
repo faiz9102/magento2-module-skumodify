@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="Faiz_SKUmod::css/skuFormStyles.css"/>
-        <script src="Faiz_SKUmod::js/SkuFormHandling.js" async="0"/>
+        <script src="Faiz_SKUmod::js/SkuFormHandling.js" defer="true"/>
     </head>
     <body>
         <referenceContainer name="content">
